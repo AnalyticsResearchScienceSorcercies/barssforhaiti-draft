@@ -1,0 +1,8 @@
+# Local dev helpers -- not part of the deployed site
+_SITE_NOTES.md
+_fix_*.py
+_wire_*.py
+_serve_nocache.py
+*.pyc
+__pycache__/
+.DS_Store
