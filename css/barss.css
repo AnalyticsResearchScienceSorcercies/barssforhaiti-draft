@@ -237,6 +237,42 @@ ul { list-style: none; }
 .row-total .row-label { font-weight: 600; }
 .row-total .row-fig { font-size: 16px; }
 
+/* --- PORTRAIT --- */
+/* Desaturated by default so a full-colour photo does not fight the Du Bois
+   palette; returns to colour on hover. Crimson rule underneath ties it to
+   .ledger and the favicon. */
+.portrait { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.portrait img {
+  /* Explicit box rather than aspect-ratio: the intrinsic 400x400 plus the
+     width/height attributes won out over aspect-ratio and rendered 213x398. */
+  width: 208px;
+  height: 208px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: 50% 32%;
+  border-bottom: 4px solid var(--du-bois-red);
+  filter: grayscale(1) contrast(1.06);
+  transition: filter .35s ease;
+}
+.portrait:hover img { filter: grayscale(0) contrast(1); }
+@media (prefers-reduced-motion: reduce) { .portrait img { transition: none; } }
+.portrait-name {
+  font-family: var(--f-display);
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--bone);
+  line-height: 1.1;
+}
+.portrait-role {
+  font-family: var(--f-data);
+  font-size: 10px;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-top: 4px;
+}
+
 /* --- STAT BAND --- */
 .stats {
   display: grid;
